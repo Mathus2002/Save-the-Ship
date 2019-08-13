@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Save Our Ship (Reloaded)</name>
-  <author>pipakin</author>
+  <name>Save the Ship</name>
+  <author>Mathus</author>
   <url></url>
   <targetVersion>1.0.2059</targetVersion>
 <description>
 Launched ships are saved to disk and can be landed on new worlds. Also allows building ships with interiors.
 
 Based on Save Our Ship by Kentington
+  and Save Our Ship (Reloaded) by pipakin
 </description>
 </ModMetaData>
