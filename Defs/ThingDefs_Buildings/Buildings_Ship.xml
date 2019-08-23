@@ -25,10 +25,10 @@
       <Flammability>0.0</Flammability>
       <Beauty>1</Beauty>
     </statBases>
-    <description>Spaceworthy hull plating. Designates this tile (and any objects built on it) as part of a ship. Must be placed inside an enclosed room.</description>
+    <description>Spaceworthy hull plating. Designates this tile (and any objects built on it) as part of a ship. Must be placed inside an enclosed room. Build in small sections to reduce lag.</description>
     <costList>
       <Steel>3</Steel>
-	  <Plasteel>5</Plasteel>
+	<Plasteel>5</Plasteel>
     </costList>
     <comps>
       <li Class="CompProperties_ShipPart"/>
@@ -70,7 +70,7 @@
       <Flammability>0.0</Flammability>
       <Beauty>1</Beauty>
     </statBases>
-    <description>Life Support Vent for distributing atmosphere around the ship. Does not provide O2, only redistributes it. Automatically closes during depressurization.</description>
+    <description>Life Support Vent for distributing atmosphere around the ship. Does not make o2, only redistributes it. Once built select to see air stats.</description>
     <costList>
       <Steel>3</Steel>
       <Plasteel>5</Plasteel>
@@ -100,7 +100,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>ShipInside_AirTank</defName>
     <label>air tank</label>
-    <description>Holds air. Good for breathing.</description>
+    <description>Compressed tank of o2.</description>
     <thingClass>Building</thingClass>
     <graphicData>
       <texPath>Things/Building/Ship/AirTank</texPath>
@@ -112,15 +112,15 @@
     </graphicData>
     <researchPrerequisites><li>ShipBasics</li></researchPrerequisites>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>PassThroughOnly</passability>
+    <passability>Impassable</passability>
     <pathCost>70</pathCost>
     <blockWind>true</blockWind>
-    <fillPercent>0.5</fillPercent>
+    <fillPercent>1</fillPercent>
     <canOverlapZones>false</canOverlapZones>
     <statBases>
       <WorkToBuild>8000</WorkToBuild>
       <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>0</Flammability>
+      <Flammability>50</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <size>(2,2)</size>
@@ -130,25 +130,33 @@
       <li Class="CompProperties_AirTank">
         <maxPressure>1000000</maxPressure>
       </li>
+	          <li Class="CompProperties_Explosive">
+        <explosiveRadius>5</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+      </li>
     </comps>
     <placeWorkers>
       <li>PlaceWorker_InsideStarship</li>
     </placeWorkers>
     <building>
       <shipPart>true</shipPart>
+	    <!-- air tank shouldn't have people in it??
       <isPlayerEjectable>true</isPlayerEjectable>
+-->
     </building>
     <costList>
       <Steel>120</Steel>
-			<Uranium>14</Uranium>
-			<ComponentIndustrial>3</ComponentIndustrial>
-      <ComponentSpacer>3</ComponentSpacer>
+	    <Plasteel>15</Plasteel>
+		<ComponentIndustrial>3</ComponentIndustrial>
+     			 <ComponentSpacer>3</ComponentSpacer>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <designationHotKey>Misc2</designationHotKey>
   </ThingDef>
 
+	<!--  Want to duplicate this and make it a 2x2 as well -->
+	
   <ThingDef ParentName="BuildingBase">
     <defName>Ship_Beam_Modular</defName>
     <label>ship structural module</label>
@@ -196,7 +204,7 @@
       </li>
       <li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_DefaultStuff">
-				<defaultStuff>Plasteel</defaultStuff>
+				<defaultStuff>Steel</defaultStuff>
 			</li>
 		  <li Class="CompProperties_RoofMe"/>
     </comps>
@@ -214,9 +222,10 @@
     </stuffCategories>
     <costStuffCount>30</costStuffCount>
     <costList>
-      <Steel>40</Steel>
-      <ComponentSpacer>1</ComponentSpacer>
-      <ComponentIndustrial>1</ComponentIndustrial>
+      <Steel>50</Steel>
+	    <!-- you could end up putting several hundred of these into a ship, advanced componant cost seems to high
+      <ComponentSpacer>1</ComponentSpacer>  -->
+      <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -249,14 +258,16 @@
     <canOverlapZones>false</canOverlapZones>
     <statBases>
       <WorkToBuild>8000</WorkToBuild>
-      <MaxHitPoints>200</MaxHitPoints>
+      <MaxHitPoints>500</MaxHitPoints>
       <Flammability>0</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <size>(1,2)</size>
     <designationCategory>Ship</designationCategory>
     <hasInteractionCell>true</hasInteractionCell>
-    <interactionCellOffset>(1,0,0)</interactionCellOffset>
+	  <!-- want the interaction point to be at the end of the cryopod, adjust until i get it or i learn which variable to change -->
+	  
+    <interactionCellOffset>(0,1,0)</interactionCellOffset>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTransmitter</compClass>
@@ -327,9 +338,9 @@
     </statBases>
     <selectable>true</selectable>
     <costList>
-      <Steel>200</Steel>
+      <Steel>300</Steel>
       <ComponentIndustrial>10</ComponentIndustrial>
-      <ComponentSpacer>5</ComponentSpacer>
+      <ComponentSpacer>2</ComponentSpacer>
     </costList>
     <building>
       <shipPart>true</shipPart>
@@ -355,7 +366,7 @@
 			</li>
       <li Class="CompProperties_Breakdownable"/>
 			<li Class="CompProperties_DefaultStuff">
-				<defaultStuff>Plasteel</defaultStuff>
+				<defaultStuff>Steel</defaultStuff>
 			</li>
     </comps>
     <stuffCategories>
@@ -373,7 +384,7 @@
       <li>SolarPanels</li>
       <li>ShipBasics</li>
     </researchPrerequisites>
-    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -419,13 +430,13 @@
     </statBases>
     <selectable>true</selectable>
     <costList>
-      <Steel>200</Steel>
+      <Steel>300</Steel>
       <ComponentIndustrial>10</ComponentIndustrial>
-      <ComponentSpacer>5</ComponentSpacer>
+      <ComponentSpacer>2</ComponentSpacer>
     </costList>
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-    <resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
+    <resourcesFractionWhenDeconstructed>0.9</resourcesFractionWhenDeconstructed>
     <placeWorkers>
       <li>PlaceWorker_Radiator</li>
     </placeWorkers>
@@ -453,7 +464,7 @@
 				<size>(1,1,1)</size>
 			</li>
 			<li Class="CompProperties_DefaultStuff">
-				<defaultStuff>Plasteel</defaultStuff>
+				<defaultStuff>Steel</defaultStuff>
 			</li>
       <li Class="CompProperties_RoofMe"/>
     </comps>
@@ -475,7 +486,9 @@
       </blueprintGraphicData>
 		</building>
   </ThingDef>
-
+	
+<!-- progress so far.  edits on 8/23 -->
+	
 	<ThingDef ParentName="BuildingBase">
     <defName>ShipInside_Turret_MiniTurret</defName>
     <label>mini-turret</label>
