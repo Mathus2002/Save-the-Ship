@@ -497,7 +497,7 @@
     <graphicData>
       <texPath>Things/Building/Ship/BeamSingle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <drawSize>(2,2)</drawSize>
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
@@ -507,6 +507,7 @@
       </shadowData>
     </graphicData>
     <uiIconPath>Things/Building/Security/TurretMini_MenuIcon</uiIconPath>
+	<size>(2,2)</size>
     <uiIconScale>0.90</uiIconScale>
     <minifiedDef>MinifiedThing</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
@@ -557,9 +558,9 @@
         <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
       </li>
     </comps>
-    <passability>PassThroughOnly</passability>
+    <passability>Impassable</passability>
     <pathCost>50</pathCost>
-    <fillPercent>0.4</fillPercent>
+    <fillPercent>1.0</fillPercent>
     <hasTooltip>true</hasTooltip>
     <stuffCategories>
       <li>Metallic</li>
@@ -654,14 +655,17 @@
         <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
       </li>
     </comps>
-    <passability>PassThroughOnly</passability>
+    <passability>Impassable</passability>
     <pathCost>50</pathCost>
-    <fillPercent>0.5</fillPercent>
+    <fillPercent>1.0</fillPercent>
     <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
     <costList>
-      <Steel>350</Steel>
-      <Plasteel>40</Plasteel>
-      <ComponentIndustrial>6</ComponentIndustrial>
+      <Steel>150</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <designationCategory>Ship</designationCategory>
