@@ -487,12 +487,10 @@
 		</building>
   </ThingDef>
 	
-<!-- progress so far.  edits on 8/23 -->
-	
 	<ThingDef ParentName="BuildingBase">
     <defName>ShipInside_Turret_MiniTurret</defName>
     <label>mini-turret</label>
-    <description>A portable automatic turret. Requires steel to refurbish its barrel after heavy use. May explode when damaged. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
+    <description>A small automatic turret mounted into the ship. Requires steel to refurbish its barrel after heavy use.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
       <texPath>Things/Building/Ship/BeamSingle</texPath>
@@ -521,13 +519,13 @@
       <Flammability>0.7</Flammability>
       <WorkToBuild>3500</WorkToBuild>
       <Mass>10</Mass>
-      <Beauty>-20</Beauty>
+      <Beauty>2</Beauty>
       <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
     </statBases>
     <tickerType>Normal</tickerType>
     <comps>
       <li Class="CompProperties_Explosive">
-        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveRadius>1.0</explosiveRadius>
         <explosiveDamageType>Bomb</explosiveDamageType>
         <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
       </li>
@@ -551,7 +549,7 @@
         <autoRefuelPercent>0.75</autoRefuelPercent>
         <showFuelGizmo>true</showFuelGizmo>
         <minimumFueledThreshold>1</minimumFueledThreshold>
-        <fuelMultiplier>3</fuelMultiplier>
+        <fuelMultiplier>5</fuelMultiplier>
         <factorByDifficulty>true</factorByDifficulty>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
         <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
@@ -578,7 +576,7 @@
       <shipPart>true</shipPart>
 			<ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_MiniTurret</turretGunDef>
-      <turretBurstCooldownTime>4.8</turretBurstCooldownTime>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
       <turretTopGraphicPath>Things/Building/Security/TurretMini_Top</turretTopGraphicPath>
     </building>
     <placeWorkers>
@@ -618,13 +616,13 @@
       <Flammability>0.7</Flammability>
       <WorkToBuild>15000</WorkToBuild>
       <Mass>100</Mass>
-      <Beauty>-20</Beauty>
+      <Beauty>2</Beauty>
       <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
     </statBases>
     <tickerType>Normal</tickerType>
     <comps>
       <li Class="CompProperties_Explosive">
-        <explosiveRadius>5.9</explosiveRadius>
+        <explosiveRadius>2</explosiveRadius>
         <explosiveDamageType>Bomb</explosiveDamageType>
         <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
       </li>
@@ -643,12 +641,12 @@
             <li>Steel</li>
           </thingDefs>
         </fuelFilter>
-        <fuelCapacity>90</fuelCapacity>
+        <fuelCapacity>200</fuelCapacity>
         <initialFuelPercent>1</initialFuelPercent>
         <autoRefuelPercent>0.75</autoRefuelPercent>
         <showFuelGizmo>true</showFuelGizmo>
         <minimumFueledThreshold>1</minimumFueledThreshold>
-        <fuelMultiplier>0.75</fuelMultiplier>
+        <fuelMultiplier>5</fuelMultiplier>
         <factorByDifficulty>true</factorByDifficulty>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
         <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
@@ -675,7 +673,7 @@
       <shipPart>true</shipPart>
       <ai_combatDangerous>true</ai_combatDangerous>
       <turretGunDef>Gun_AutocannonTurret</turretGunDef>
-      <turretBurstCooldownTime>3.5</turretBurstCooldownTime>
+      <turretBurstCooldownTime>2</turretBurstCooldownTime>
       <turretTopGraphicPath>Things/Building/Security/TurretAutocannon_Top</turretTopGraphicPath>
       <turretTopDrawSize>2.7</turretTopDrawSize>
       <turretTopOffset>(0, 0.05)</turretTopOffset>
