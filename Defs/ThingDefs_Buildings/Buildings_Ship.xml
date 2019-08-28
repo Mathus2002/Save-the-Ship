@@ -235,6 +235,91 @@
     <designationHotKey>Misc1</designationHotKey>
     <holdsRoof>true</holdsRoof>
   </ThingDef>
+	<!--  2x2 ship piece trial -->
+	
+	
+  <ThingDef ParentName="BuildingBase">
+    <defName>Ship_Beam_Modular</defName>
+    <label>ship structural module 2x2</label>
+    <description>A medium structural module around which a ship can be constructed.</description>
+    <thingClass>Building</thingClass>
+		<graphicData>
+      <texPath>Things/Building/Ship/BeamQuad</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+			      <drawSize>(2,2)</drawSize>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+		<uiIconPath>Things/Building/Ship/BeamQuad</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <statBases>
+      <WorkToBuild>8000</WorkToBuild>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+	      <size>(2,2)</size>
+    <designationCategory>Ship</designationCategory>
+    <placingDraggableDimensions>0</placingDraggableDimensions>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTransmitter</compClass>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_DefaultStuff">
+				<defaultStuff>Steel</defaultStuff>
+			</li>
+		  <li Class="CompProperties_RoofMe"/>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderNonShipRoof</li>
+    </placeWorkers>
+    <building>
+      <shipPart>true</shipPart>
+	    <!--  commenting out to see how the blueprint reacts
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+	    -->
+    </building>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>110</costStuffCount>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <researchPrerequisites>
+      <li>ShipBasics</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc1</designationHotKey>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>	
+	
 
   <ThingDef ParentName="BuildingBase">
     <defName>ShipInside_CryptosleepCasket</defName>
